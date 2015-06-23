@@ -23,6 +23,7 @@ class UserDetail(generics.RetrieveAPIView):
 
 class PostList(generics.ListCreateAPIView):
     model = Post
+    queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [
         permissions.AllowAny
@@ -48,6 +49,7 @@ class UserPostList(generics.ListAPIView):
 
 class PhotoList(generics.ListCreateAPIView):
     model = Photo
+    queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
     permission_classes = [
         permissions.AllowAny
